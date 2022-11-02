@@ -12,26 +12,6 @@ const currentOperationTextEl = document.querySelector(
     "[data-current-operation]"
 );
 
-const numbPad = [
-    "Numpad0",
-    "Numpad1",
-    "Numpad2",
-    "Numpad3",
-    "Numpad4",
-    "Numpad5",
-    "Numpad6",
-    "Numpad7",
-    "Numpad8",
-    "Numpad9",
-];
-
-const operationPad = [
-    "NumpadDivide",
-    "NumpadMultiply",
-    "NumpadSubtract",
-    "NumpadAdd",
-];
-
 const keyPad = [
     "Numpad0",
     "Numpad1",
@@ -51,16 +31,6 @@ const keyPad = [
     "NumpadEnter",
     "Backspace",
 ];
-
-console.log(
-    numberButtons,
-    operationButtons,
-    equalsButton,
-    allClearButton,
-    previousOperationTextEl,
-    currentOperationTextEl
-);
-
 class Calculator {
     constructor(previousOperationTextEl, currentOperationTextEl) {
         this.previousOperationTextEl = previousOperationTextEl;
@@ -79,12 +49,16 @@ class Calculator {
     }
 
     appendNumber(number) {
-        if (number === "." && this.currentOperation.includes(".")) return;
+        if (number === "." && this.currentOperation.toString().includes("."))
+            return;
         this.currentOperation =
             this.currentOperation.toString() + number.toString();
     }
 
     chooseOperation(operation) {
+        if (this.currentOperation === "" && this.operation !== operation) {
+            this.operation = operation;
+        }
         if (this.currentOperation === "") return;
         if (this.previousOperation !== "") {
             this.compute();
@@ -122,10 +96,21 @@ class Calculator {
     }
 
     getDisplayNumber(number) {
+        const numbDot = number.toString().includes(".");
+        const decimalNotFixed = number.toString().split(".")[1];
+
+        if (numbDot && decimalNotFixed.length >= 3) {
+            number = parseFloat(number).toFixed(3);
+
+            for (let i = 2; decimalNotFixed[i] === "0" && i >= 0; i--) {
+                number = parseFloat(number).toFixed(i);
+            }
+        }
         const stringNumber = number.toString();
-        const integerDigits = parseFloat(stringNumber.split(".")[0]);
+        const integerDigits = +stringNumber.split(".")[0];
         const decimalDigits = stringNumber.split(".")[1];
         let integerDisplay;
+
         if (isNaN(integerDigits)) {
             integerDisplay = "";
         } else {
