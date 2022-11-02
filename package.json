@@ -5,7 +5,8 @@
     "default": "index.html",
     "scripts": {
         "start": "parcel index.html",
-        "build": "parcel build index.html --dist-dir ./dist"
+        "build": "parcel build index.html --dist-dir ./dist",
+        "watch:sass": "sass sass/main.scss css/style.css -w"
     },
     "author": "Miguel Moreno",
     "license": "ISC",
@@ -15,7 +16,6 @@
         "sass": "^1.26.10"
     },
     "dependencies": {
-        "core-js": "^3.26.0",
         "regenerator-runtime": "^0.13.10"
     }
 }
