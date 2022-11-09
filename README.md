@@ -28,6 +28,9 @@
     <li>
       <a href="#getting-started">Getting Started</a>
     </li>
+     <li>
+      <a href="#posible-extra-features-and-improvements">Posible extra features and improvements</a>
+    </li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -37,9 +40,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The main goal of this project is to learn how to manage DOM events, learn about AddEventListener JS Method , take values from inputs, use them to do operations and give back the correct information.
+The main goal of this project is to learn:
+ * How to manage DOM events
+ * About AddEventListener JS Method
+ * Take values from inputs, use them to do operations and give back the correct information.
 <br />
 <br />
+
 ### How does it work?
 
 There are two ways of looking for the weather:
