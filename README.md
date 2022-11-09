@@ -25,9 +25,6 @@
     <li>
       <a href="#about-the-project">About The Project</a>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-    </li>
      <li>
       <a href="#posible-extra-features-and-improvements">Posible extra features and improvements</a>
     </li>
@@ -45,13 +42,20 @@ The main goal of this project is to learn:
  * About AddEventListener JS Method
  * Take values from inputs, use them to do operations and give back the correct information.
 <br />
-<br />
 
 ### How does it work?
 
-There are two ways of looking for the weather:
-  * Enter only the city name that you are looking for (ex: Madrid)
-  * Enter the city and also the country initials, separated by a comma (ex: Madrid, ES)
+* The app shows the current operation that your are doing and also the previous one
+* It shows up to 3 decimal numbers
+* Where you want to add some decimal number press the '.' button
+<br />
+ There are two ways to use the calculator:
+
+   * By clicking the buttons on the screen
+   * By pressing the keypad buttons of your keyboard
+  
+     * "Backspace" button to delete one number each time it is pressed
+     * "Delete" button to delete all
 <br />
 
 ### What did I used to get the best of this project?
@@ -64,7 +68,6 @@ There are two ways of looking for the weather:
   * <img src="https://img.shields.io/badge/-SASS-ff69b4" alt="Logo"> as a CSS pre-processor. Which offer:
     * Efficient syntax
     * Readable styles files
-    * Reusable components (@mixins and @extends)
   
   * <img src="https://img.shields.io/badge/-CSS3-blue" alt="Logo"> features:
     * Flexbox 
@@ -72,49 +75,29 @@ There are two ways of looking for the weather:
     * Variables
     * Pseudo-elements
     * Pseudo-classes
-    * Media Queries
 
   * <img src="https://img.shields.io/badge/-JS-yellow" alt="Logo"> most used features:
     * ES6 Classes,
-    * filter()
-    * new Date()
-    * Promises
-    * setTimeout()
-    * export and import
+    * toString()
+    * slice()
+    * includes()
+    * isNaN()
+    * toFixed()
+    * split()
+    * toLocaleString()
     * querySelector(), querySelectorAll()
     * forEach()
     * addEventListener()
-    * insertAdjacentHTML()
-    * contains()
-    
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-Your are free to clone the repo and use it as you want! Just follow these steps and you will be ready to go:
-
-1. Get a free API Key at https://developer.accuweather.com/accuweather-forecast-api/apis
-2. Clone the repo
-   ```sh
-   git clone https://github.com/amiguelmoreno/Weather-App.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+ <br />  
    
 ## Posible extra features and improvements
 
 Some features I would like to add are:
 
- * Include hour in the searched city
- * Be able to look for more than 1 country at one time
- * Improve the design
- * Show a map and location of the city
+ * add √ and x² funcitonality
+ * add brackets operations => ()
+ * history of all the operations
+<br />
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -137,7 +120,7 @@ Don't forget to give the project a star! Thanks again!
 
 [![LinkedIn][linkedin-shield]][linkedin-url] 
 
-Project Link: https://github.com/amiguelmoreno/Weather-App
+Project Link: https://github.com/amiguelmoreno/IOS-Calculator
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
