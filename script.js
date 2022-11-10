@@ -47,6 +47,8 @@ class Calculator {
     }
 
     appendNumber(number) {
+        if (this.currentOperation.toString().length >= 8) return;
+
         if (number === "." && this.currentOperation.toString().includes("."))
             return;
         this.currentOperation =
@@ -90,24 +92,29 @@ class Calculator {
 
         this.currentOperation = computation;
         this.operation = undefined;
+        console.log(this.previousOperation);
         this.previousOperation = "";
+        console.log(this.currentOperation);
     }
 
     getDisplayNumber(number) {
         const numbDot = number.toString().includes(".");
         const decimalNotFixed = number.toString().split(".")[1];
 
-        if (numbDot && decimalNotFixed.length >= 3) {
-            number = parseFloat(number).toFixed(3);
-
-            for (let i = 2; decimalNotFixed[i] === "0" && i >= 0; i--) {
-                number = parseFloat(number).toFixed(i);
-            }
+        if (numbDot && decimalNotFixed.length > 3) {
+            number =
+                Math.round((parseFloat(number) + Number.EPSILON) * 1000) / 1000;
         }
+
         const stringNumber = number.toString();
         const integerDigits = +stringNumber.split(".")[0];
         const decimalDigits = stringNumber.split(".")[1];
         let integerDisplay;
+
+        if (integerDigits > 100000000) {
+            integerDisplay = "Err";
+            return `${integerDisplay}`;
+        }
 
         if (isNaN(integerDigits)) {
             integerDisplay = "";
