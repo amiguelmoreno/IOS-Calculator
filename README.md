@@ -94,6 +94,7 @@ The main goal of this project is to learn:
 
 Some features I would like to add are:
 
+ * manage very large numbers
  * add √ and x² funcitonality
  * add brackets operations => ()
  * history of all the operations
